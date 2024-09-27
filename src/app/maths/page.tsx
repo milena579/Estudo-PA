@@ -52,6 +52,9 @@ const Maths: React.FC = () => {
         const n2 = parseFloat(numero2)
 
         if(!isNaN(n1) && !isNaN(n2)){
+            if(n2  == 0){
+                set
+            }
             setRespDiv (n1 / n2)
         } else{
             setRespDiv(undefined)
@@ -78,8 +81,12 @@ const Maths: React.FC = () => {
                 <button onClick={handleSub}>SUBTRAIR</button>
             </div>
             <div>
-                <h2>Multiplicação: {!isNaN(respDiv ?? NaN) ? respDiv : msgError}</h2>
+                <h2>Multiplicação: {!isNaN(respMulti ?? NaN) ? respMulti : msgError}</h2>
                 <button onClick={handleDiv}>MULTIPLICAR</button>
+            </div>
+            <div>
+                <h2>Divisão: {!isNaN(respMulti ?? NaN) ? respMulti : msgError}</h2>
+                <button onClick={handleDiv}>DIVIDIR</button>
             </div>
         </>
     )
