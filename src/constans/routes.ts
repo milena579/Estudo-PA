@@ -1,4 +1,6 @@
 export enum ROUTES {
     home = "/",
-    maths = "/maths"
+    maths = "/maths",
+    generalFunction = "/funcaoGeral",
+    card = "/cartao",
 }
