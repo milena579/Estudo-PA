@@ -65,28 +65,34 @@ const Maths: React.FC = () => {
         <>
             <h1>Use client com controle de estado</h1>
             <div>
-                <label htmlFor="n1">Número 01</label>
-                <input type="text" id="n1" value={numero1} onChange={(e) => {setNumero1(e.target.value)}}/>
-            </div>
-            <div>
-                <label htmlFor="n2">Número 02</label>
-                <input type="text" id="n2"  value={numero2} onChange={(e) => {setNumero2(e.target.value)}}/>
-            </div>
-            <div>
-                <h2>Soma: {!isNaN(respSoma ?? NaN) ? respSoma : msgError}</h2>
-                <button onClick={handleSoma}>SOMAR</button>
-            </div>
-            <div>
-                <h2>Subtração: {!isNaN(respSub ?? NaN) ? respSub : msgError}</h2>
-                <button onClick={handleSub}>SUBTRAIR</button>
-            </div>
-            <div>
-                <h2>Multiplicação: {!isNaN(respMulti ?? NaN) ? respMulti : msgError}</h2>
-                <button onClick={handleDiv}>MULTIPLICAR</button>
-            </div>
-            <div>
-                <h2>Divisão: {!isNaN(respMulti ?? NaN) ? respMulti : msgError}</h2>
-                <button onClick={handleDiv}>DIVIDIR</button>
+                <div className="rounded-lg border w-80 h-auto p-5 items-center justify-center flex flex-col gap-2">
+                        <div className="w-full">
+                            <input className="border p-2 w-full" type="text" placeholder="Numero 01" value={numero1} onChange={(e) => setNumero1(e.target.value)} />
+                        </div>
+                        <div className="w-full">
+                            <input className="border p-2 w-full" type="text" placeholder="Número 02" value={numero2} onChange={(e) => setNumero2(e.target.value)}/>
+                        </div>
+                    </div>
+    
+                <div>
+                    <h2>Soma: {!isNaN(respSoma ?? NaN) ? respSoma : msgError}</h2>
+                    <button onClick={handleSoma}>SOMAR</button>
+                </div>
+
+                <div>
+                    <h2>Subtração: {!isNaN(respSub ?? NaN) ? respSub : msgError}</h2>
+                    <button onClick={handleSub}>SUBTRAIR</button>
+                </div>
+
+                <div>
+                    <h2>Multiplicação: {!isNaN(respMulti ?? NaN) ? respMulti : msgError}</h2>
+                    <button onClick={handleDiv}>MULTIPLICAR</button>
+                </div>
+                
+                <div>
+                    <h2>Divisão: {!isNaN(respMulti ?? NaN) ? respMulti : msgError}</h2>
+                    <button onClick={handleDiv}>DIVIDIR</button>
+                </div>
             </div>
         </>
     )

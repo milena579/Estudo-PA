@@ -33,40 +33,36 @@ const GeneralFunction : React.FC = () => {
 
     return(
         <>
-            <h2>Funcao Reaproveitada</h2>
-            <div>
-                <input type="text" placeholder="Numero 01" value={numero1} onChange={(e) => setNumero1(e.target.value)} />
-            </div>
-            <div>
-                <input type="text" placeholder="Número 02" value={numero2} onChange={(e) => setNumero2(e.target.value)}/>
-
-            </div>
-            <div>
-                <button onClick={() => handleAll({a: numero1, b: numero2})}>Calcular todes</button>
-            </div>
-            <div>
-                <div>
-                    <h2>Soma</h2>
+            <div className="w-full flex items-center flex-col gap-5 p-5">
+                <h2 className="font-bold text-[25px] text-indigo-800">Funcao Reaproveitada</h2>
+                <div className="rounded-lg border w-80 h-auto p-5 items-center justify-center flex flex-col gap-2">
+                    <div className="w-full">
+                        <input className="border p-2 w-full" type="text" placeholder="Numero 01" value={numero1} onChange={(e) => setNumero1(e.target.value)} />
+                    </div>
+                    <div className="w-full">
+                        <input className="border p-2 w-full" type="text" placeholder="Número 02" value={numero2} onChange={(e) => setNumero2(e.target.value)}/>
+                    </div>
+                    <div>
+                        <button className="border p-2 rounded-lg bg-emerald-400	font-bold text-white" onClick={() => handleAll({a: numero1, b: numero2})}>Calcular todes</button>
+                    </div>
+                </div>
+                <div className="flex gap-5 border p-5 w-80 rounded-lg">
+                    <h2 className="font-medium">Soma:</h2>
                     <p>{!isNaN(respSoma ?? NaN) ? respSoma : erro}</p>
                 </div>
-            </div>
-            <div>
-                <div>
-                    <h2>Subtracao</h2>
+                <div className="flex gap-5 border p-5 w-80 rounded-lg">
+                    <h2 className="font-medium">Subtracao:</h2>
                     <p>{respSub? respSub : erro}</p>
                 </div>
-            </div>
-            <div>
-                <div>
-                    <h2>Multiplicacao</h2>
+                <div className="flex gap-5 border p-5 w-80 rounded-lg">
+                    <h2 className="font-medium">Multiplicacao:</h2>
                     <p>{respMulti? respMulti : erro}</p>
                 </div>
-            </div>
-            <div>
-                <div>
-                    <h2>Divisao</h2>
+                <div className="flex gap-5 border p-5 w-80 rounded-lg">
+                    <h2 className="font-medium">Divisao:</h2>
                     <p>{respDiv? respDiv?.toFixed(1) : erro}</p>
                 </div>
+                
             </div>
         </>
     );
